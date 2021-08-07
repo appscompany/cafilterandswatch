@@ -1,4 +1,10 @@
 (function () {
+  var _stylesheeturl = '//cdn.shopify.com/s/files/1/2221/7685/t/124/assets/filtercss.css?v=9553866106880806909';
+  var link = document.createElement('link');
+  link.rel = 'stylesheet'; 
+  link.type = 'text/css';
+  link.href = _stylesheeturl; 
+  document.getElementsByTagName('HEAD')[0].appendChild(link); 
   //var _templatename = document.getElementById('_templatename').value;  
   //var _ShopCurrency = document.getElementById('ca_shop_currency').value;
   var _filterloadButton = document.createElement('button');
@@ -20,7 +26,15 @@
   var _productGridElement = document.querySelectorAll('.grid-uniform.grid-link__container')[0];
   _productGridElement.insertAdjacentHTML('beforebegin', _filterloadButton.outerHTML);
   
+  /*fetch('/collections/tops?section_id=collection-template')
+  .then(response => response.text())
+  .then(data => console.log(data));*/
+
+   fetch('/collections/tops?filter.p.product_type=Plain Tops&view=cafilters')
+  .then(response => response.text())
+  .then(data => console.log(data));
   var _filterloadbtn = document.getElementById('ca_filter_loadbtn');
+  _filterloadbtn.style.display = 'block';
   var _filterDiv = document.getElementById('ca_filter_div');
   var _filterModal = document.createElement('div');
   _filterModal.id = 'mySidenav';
@@ -49,17 +63,14 @@
      _filterSideDiv.insertAdjacentHTML('beforeend', filterElement.outerHTML);
     _filterSideDiv.style.position = 'fixed';
     _filterSideDiv.style.top = '0px';
-    _filterSideDiv.style.left = '0px'
+    _filterSideDiv.style.left = '0px';
     _filterSideDiv.style.width = '300px';
-    _filterSideDiv.style.zIndex = '5655555'
+    _filterSideDiv.style.zIndex = '5655555';
     console.log(_filterSideDiv);
   };
-  xhttprequest.open('GET', 'https://shopthelookdemo.myshopify.com/collections/tops?view=cafiltersdivtemplate');
+  xhttprequest.open('GET', 'https://shopthelookdemo.myshopify.com/collections/' + window.collectionHandle + '?view=cafiltersdivtemplate');
   xhttprequest.responseType = 'document';
   xhttprequest.send();
-
- 
-  
   _filterloadbtn.onclick = function(event) {
    var _filterSideDiv = document.getElementById("mySidenav");    
     _filterSideDiv.style.display = 'block';
