@@ -25,9 +25,7 @@
     if (gridSelectorHTTPRequest.readyState === 4 && gridSelectorHTTPRequest.status === 200) {
       window.collectiongridselector = gridSelectorHTTPRequest.responseText;
 
-      gridSelectorHTTPRequest.open('GET', '/collections/' + _collectionhandle + '?view=cagridselector');
-      gridSelectorHTTPRequest.responseType = 'text';
-      gridSelectorHTTPRequest.send();
+
       var _filterPosition = 'VLeft'; // VLeft,HTop,VSideBar
       var _stylesheeturl = '//cdn.shopify.com/s/files/1/2221/7685/t/124/assets/filtercss.css?v=9553866106880806909';
       var link = document.createElement('link');
@@ -312,6 +310,9 @@
     }
 
   };
+  gridSelectorHTTPRequest.open('GET', '/collections/' + _collectionhandle + '?view=cagridselector');
+  gridSelectorHTTPRequest.responseType = 'text';
+  gridSelectorHTTPRequest.send();
   // Click Filters Event
   document.addEventListener('click',function(e){
     var targetElement = e.target;
