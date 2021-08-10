@@ -132,7 +132,7 @@
       // Filter Div/Load Button Loading
     };
     console.log(window.collectionHandle);
-    xhttprequest.open('GET', '/collections/' + _collectionhandle + '?view=cafiltersdivtemplate');
+    xhttprequest.open('GET', '/collections/' + _collectionhandle + '?preview_theme_id=120385830978&view=cafiltersdivtemplate');
     xhttprequest.responseType = 'document';
     xhttprequest.send();
   }
