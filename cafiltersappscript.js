@@ -310,7 +310,7 @@
     }
 
   };
-  gridSelectorHTTPRequest.open('GET', '/collections/' + _collectionhandle + '?view=cagridselector');
+  gridSelectorHTTPRequest.open('GET', '/collections/' + _collectionhandle + '?_ab=0&_fd=0&_sc=1&preview_theme_id=120385830978&view=cagridselector');
   gridSelectorHTTPRequest.responseType = 'text';
   gridSelectorHTTPRequest.send();
   // Click Filters Event
