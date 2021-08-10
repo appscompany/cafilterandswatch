@@ -310,7 +310,7 @@
     }
 
   };
-  gridSelectorHTTPRequest.open('GET', '/collections/' + _collectionhandle + '?_ab=0&_fd=0&_sc=1&preview_theme_id=120385830978&view=cagridselector');
+  gridSelectorHTTPRequest.open('GET', 'https://6qrtz4zvc3ulv7wg-22217685.shopifypreview.com/collections/tops' + '?view=cagridselector');
   gridSelectorHTTPRequest.responseType = 'text';
   gridSelectorHTTPRequest.send();
   // Click Filters Event
