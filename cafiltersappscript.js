@@ -109,7 +109,8 @@
         //var filterElement = xhttprequest.responseText.querySelectorAll('#ca_filter_div')[0];
       console.log(xhttprequest.responseText);
       console.log(filterElement);
-      var filterElementHTML = parser.parseFromString(xhttprequest.responseText, 'text/html');
+      var htmlparser = new DOMParser();
+      var filterElementHTML = htmlparser.parseFromString(xhttprequest.responseText, 'text/html');
       var filterElement = filterElementHTML.querySelectorAll('#ca_filter_div')[0];
       if(_filterPosition == 'VLeft')
       {
