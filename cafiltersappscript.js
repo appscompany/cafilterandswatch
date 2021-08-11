@@ -95,6 +95,7 @@
         _filterSideDiv.style.display = 'block';
       }
     }
+    
     var xhttprequest = new XMLHttpRequest();
     xhttprequest.onreadystatechange = function success() {
       if (!xhttprequest.responseXML) {
@@ -133,7 +134,8 @@
       // Filter Div/Load Button Loading
     };
     console.log(window.collectionHandle);
-    xhttprequest.open('GET', '/collections/' + _collectionhandle + '?fts=0&preview_theme_id=120385830978&view=cafiltersdivtemplate');
+    //xhttprequest.open('GET', '/collections/' + _collectionhandle + '?fts=0&preview_theme_id=120385830978&view=cafiltersdivtemplate');
+    xhttprequest.open('GET', 'https://cdn.jsdelivr.net/gh/muthusomasundaram/cafilterandswatch@1.0.7/filtershtml.html');
     xhttprequest.responseType = 'document';
     xhttprequest.send();
   }
