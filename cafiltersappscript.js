@@ -14,8 +14,8 @@
   var paramlessurl = _currenturl.split('?')[0];
   var pathslist = paramlessurl.split('/');
   var _collectionhandle = pathslist[pathslist.length - 1];
-  var _collectiongridSelector = '.collection--body--grid';
-  window.collectiongridselector = '.collection--body--grid';
+  var _collectiongridSelector = '#collection-root';
+  window.collectiongridselector = '#collection-root';
   var _filterPosition = 'VLeft'; // VLeft,HTop,VSideBar
   //var _stylesheeturl = '//cdn.shopify.com/s/files/1/2221/7685/t/124/assets/filtercss.css?v=9553866106880806909';
   var _stylesheeturl = 'https://cdn.jsdelivr.net/gh/muthusomasundaram/cafilterandswatch@1.0.13/cafiltersappcss.css';
