@@ -105,7 +105,7 @@
         return;
       }
       var filterElement = xhttprequest.responseXML.querySelectorAll('#ca_filter_div')[0];
-      //console.log(_filterPosition);
+      console.log(filterElement);
       if(_filterPosition == 'VLeft')
       {
         //console.log(filterElement.outerHTML);
@@ -135,7 +135,7 @@
     };
     console.log(window.collectionHandle);
     //xhttprequest.open('GET', '/collections/' + _collectionhandle + '?fts=0&preview_theme_id=120385830978&view=cafiltersdivtemplate');
-    xhttprequest.open('GET', 'https://cdn.jsdelivr.net/gh/muthusomasundaram/cafilterandswatch@1.0.7/filtershtml.html');
+    xhttprequest.open('GET', 'https://cdn.jsdelivr.net/gh/muthusomasundaram/cafilterandswatch@1.0.8/filtershtml.html');
     xhttprequest.responseType = 'document';
     xhttprequest.send();
   }
