@@ -105,6 +105,7 @@
         return;
       }
       var filterElement = xhttprequest.responseXML.querySelectorAll('#ca_filter_div')[0];
+      console.log(xhttprequest.responseXML);
       console.log(filterElement);
       if(_filterPosition == 'VLeft')
       {
