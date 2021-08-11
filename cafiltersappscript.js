@@ -98,15 +98,19 @@
     
     var xhttprequest = new XMLHttpRequest();
     xhttprequest.onreadystatechange = function success() {
-      if (!xhttprequest.responseXML) {
+      if (!xhttprequest.responseText) {
         return;
       }
       if (!xhttprequest.readyState === 4 || !xhttprequest.status === 200) {
         return;
       }
-      var filterElement = xhttprequest.responseXML.querySelectorAll('#ca_filter_div')[0];
-      console.log(xhttprequest.responseXML);
+      
+      if (xhttprequest.readyState === 4 && xhttprequest.status === 200) {
+        //var filterElement = xhttprequest.responseText.querySelectorAll('#ca_filter_div')[0];
+      console.log(xhttprequest.responseText);
       console.log(filterElement);
+      var filterElementHTML = parser.parseFromString(xhttprequest.responseText, 'text/html');
+      var filterElement = filterElementHTML.querySelectorAll('#ca_filter_div')[0];
       if(_filterPosition == 'VLeft')
       {
         //console.log(filterElement.outerHTML);
@@ -132,12 +136,14 @@
         _filterSideDiv.style.zIndex = '5655555';
         //console.log(_filterSideDiv);
       }
+      }
+      
       // Filter Div/Load Button Loading
     };
     console.log(window.collectionHandle);
     //xhttprequest.open('GET', '/collections/' + _collectionhandle + '?fts=0&preview_theme_id=120385830978&view=cafiltersdivtemplate');
     xhttprequest.open('GET', 'https://cdn.jsdelivr.net/gh/muthusomasundaram/cafilterandswatch@1.0.8/filtershtml.html');
-    xhttprequest.responseType = 'document';
+    xhttprequest.responseType = 'text';
     xhttprequest.send();
   }
 
