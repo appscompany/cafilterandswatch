@@ -8,6 +8,7 @@
       _templateName = 'search';
     }
   }
+  console.log(_templateName);
   window.collectiongridselector = '';
   var _currenturl = location.href;
   var paramlessurl = _currenturl.split('?')[0];
@@ -59,8 +60,8 @@
     _filterModal.style.bottom = '0';
     _filterModal.style.backgroundColor = '#fff';
     document.body.appendChild(_filterModal);
-    _productGridElement = document.querySelectorAll('.wrapper.main-content')[0];   
-
+    //_productGridElement = document.querySelectorAll('.wrapper.main-content')[0];   
+    _productGridElement = document.querySelectorAll(window.collectiongridselector)[0];
     _productGridElement.insertAdjacentHTML('beforebegin', _filterloadButton.outerHTML);
     var _filterloadbtn = document.getElementById('ca_filter_loadbtn');
     _filterloadbtn.style.display = 'block';
