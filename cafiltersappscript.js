@@ -18,7 +18,7 @@
   window.collectiongridselector = '#collection-root';
   var _filterPosition = 'VLeft'; // VLeft,HTop,VSideBar
   //var _stylesheeturl = '//cdn.shopify.com/s/files/1/2221/7685/t/124/assets/filtercss.css?v=9553866106880806909';
-  var _stylesheeturl = 'https://cdn.jsdelivr.net/gh/muthusomasundaram/cafilterandswatch@1.0.13/cafiltersappcss.css';
+  var _stylesheeturl = 'https://cdn.jsdelivr.net/gh/muthusomasundaram/cafilterandswatch@1.0.17/cafiltersappcss.css';
   var link = document.createElement('link');
   link.rel = 'stylesheet'; 
   link.type = 'text/css';
